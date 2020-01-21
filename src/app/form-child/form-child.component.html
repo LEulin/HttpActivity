@@ -1,0 +1,23 @@
+<div>
+    <h4>Registered Students</h4>
+    <table class="table table-bordered">
+        <thead class="thead-light">
+            <tr>
+                <td>No.</td>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let information of data; let i = index">
+                <td>{{i + 1}}</td>
+                <td>{{information.name}}</td>
+                <td>{{information.email}}</td>
+                <td>{{information.password}}</td>
+                <td><button class="btn btn-success" (click)="Edit(information)">Edit</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

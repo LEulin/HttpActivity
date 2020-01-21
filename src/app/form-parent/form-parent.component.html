@@ -1,0 +1,43 @@
+<div class="jumbotron text-center">
+  <h1>Registration Form</h1>
+</div>
+<div class="container">
+  <div class="row">      <div class="col-sm-6">
+      <form (ngSubmit)="submit()" #formvalidation="ngForm">
+        <div class="form-group">
+          <label><b>Name:</b></label>
+          <input name="name" type="text" class="form-control" placeholder="Enter Name" [(ngModel)]="nameya" #name="ngModel"
+            required>
+          <div *ngIf="name.invalid && (name.dirty || name.touched)">
+            <div class="alert alert-danger" role="alert" *ngIf="name.errors.required">Name is required!!</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label><b>Email:</b></label>
+          <input name="email" type="text" class="form-control" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+            placeholder="Enter email" [(ngModel)]="emailya" #email="ngModel" required>
+          <div *ngIf="email.invalid && (email.dirty || email.touched)">
+            <div class="alert alert-danger" role="alert" *ngIf="email.errors.required">Email is required!!</div>
+            <div class="alert alert-danger" role="alert" *ngIf="email.errors.pattern">Email is invalid!!</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label><b>Password:</b></label>
+          <input name="pass" type="password" class="form-control" placeholder="Password" minlength="8" [(ngModel)]="passwordya"
+            #pass="ngModel" required>
+          <div *ngIf="pass.invalid && (pass.dirty || pass.touched)">
+            <div class="alert alert-danger" role="alert" *ngIf="pass.errors.required">Password is required!!</div>
+            <div class="alert alert-danger" role="alert" *ngIf="pass.errors.minlength">Minimum of 8 characters!!</div>
+          </div>
+        </div>
+        <button class="btn btn-success" [disabled]="!formvalidation.form.valid">Submit</button>
+        <br>
+        <br>
+      </form>
+    </div>
+
+    <div class="col-sm-6">
+      <app-form-child (dataEvent)="editedData($event)" [data]="storage"></app-form-child>
+    </div>
+  </div>
+</div>

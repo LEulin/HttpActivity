@@ -1,37 +1,40 @@
 <div class="container">
     <h2>Fill Up Form</h2>
-    <form  (ngSubmit)="submit()" #formniSiya="ngForm">
+    <form (ngSubmit)="submit()" #formniSiya="ngForm">
         <div class="form-group">
             <label for="name">Name:</label>
-            <input type="name" class="form-control" placeholder="Enter email" name="name" [(ngModel)]="nameni" #name="ngModel" required>
+            <input type="name" class="form-control" placeholder="Enter email" name="name" [(ngModel)]="nameni" #name="ngModel"
+                required>
             <div *ngIf="name.invalid && (name.dirty || name.touched)">
                 <div class="alert alert-danger" role="alert" *ngIf="name.errors.required">Name is required!!</div>
-              </div>
+            </div>
         </div>
         <div class="form-group">
             <label for="email">Email:</label>
-            <input type="email" class="form-control" placeholder="Enter email"  pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" name="email"  [(ngModel)]="emailni" #email="ngModel" required>
+            <input type="email" class="form-control" placeholder="Enter email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+                name="email" [(ngModel)]="emailni" #email="ngModel" required>
             <div *ngIf="email.invalid && (email.dirty || email.touched)">
                 <div class="alert alert-danger" role="alert" *ngIf="email.errors.required">Email is required!!</div>
                 <div class="alert alert-danger" role="alert" *ngIf="email.errors.pattern">Email is invalid!!</div>
-              </div>
+            </div>
         </div>
         <div class="form-group">
             <label for="contact">Contact Number:</label>
-            <input type="text" class="form-control" placeholder="Enter email" name="contact"  [(ngModel)]="contactni" #contact="ngModel" required>
+            <input type="text" class="form-control" placeholder="Enter email" name="contact" [(ngModel)]="contactni"
+                #contact="ngModel" required>
             <div *ngIf="contact.invalid && (contact.dirty || contact.touched)">
-                <div class="alert alert-danger" role="alert" *ngIf="contact.errors.required">Contact number is required!!</div>
-              </div>
+                <div class="alert alert-danger" role="alert" *ngIf="contact.errors.required">Contact number is
+                    required!!</div>
+            </div>
         </div>
         <br>
         <button class="btn btn-success" *ngIf="submitbutton" [disabled]="!formniSiya.form.valid">Submit</button>&nbsp;
-        <button class="btn btn-success" [disabled]="!formniSiya.form.valid" *ngIf="savebutton">Save</button>&nbsp;
-        <button class="btn btn-info" [disabled]="!formniSiya.form.valid" (click)="deletedData($event)">Clear</button>
     </form>
+    <button class="btn btn-success" [disabled]="!formniSiya.form.valid" *ngIf="savebutton" (click)="updatedData($event)">Save</button>&nbsp;
+    <button class="btn btn-danger" [disabled]="!formniSiya.form.valid" (click)="deletedData($event)">Clear</button>
 </div>
 <br>
 <br>
 <div>
-    <app-editform (deleteEvent)="deletedData($event)" (updateEvent)="updatedData($event)" [storage]="storage"></app-editform>
+    <app-editform (deleteEvent)="deletedData($event)" (updateEvent)="updatedData($event)" [storage]="info"></app-editform>
 </div>
-

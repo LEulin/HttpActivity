@@ -45,40 +45,6 @@ export class FillupformComponent implements OnInit {
       data.id = + last_index + 1
       this.info.push(data)
     })
-
-    /////this is for the save method
-    // if(){
-
-    // }else{}  
-
-    // if (this.submitbutton === true) {
-    //   console.log("this is for submit", this.info)
-    //   this.data = new Info
-    //   this.data.id = this.info[this.info.length - 1].id + 1
-    //   this.data.name = this.nameni
-    //   this.data.email = this.emailni
-    //   this.data.phone = this.contactni
-    //   this.info.push(this.data)
-    //   swal.fire("Successfully submitted!", "Nice One", "success");
-    //   console.log("is Edited")
-    //   // this.data = new Info
-    // } else {
-    //   console.log("this is for update")
-    //   // this.info.values.name
-    //   this.info.forEach(element => {
-    //     if (element.id === this.id) {
-    //       element.name = this.nameni
-    //       element.email = this.emailni
-    //       element.phone = this.contactni
-    //       console.log("Nigana ba ka?")
-    //     }
-    //     console.log(element)
-
-    //   })
-    //   this.submitbutton = true
-    //   this.savebutton = false
-    //   swal.fire("Successfully edited!", "Nice One", "success");
-    // }
   }
 
   deletedData() {

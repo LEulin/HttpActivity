@@ -1,0 +1,25 @@
+body {
+    background-color: #e9ebee;
+}
+
+.card {
+    margin-top: 1em;
+}
+.person-card {
+    margin-top: 1em;
+    padding-top: 5em;
+    background: linear-gradient(to bottom, #66ffcc 0%, #66ccff 100%);
+}
+.person-card .card-title{
+    text-align: center;
+}
+.person-card .person-img{
+    width: 10em;
+    position: absolute;
+    top: -5em;
+    left: 50%;
+    margin-left: -5em;
+    border-radius: 100%;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #66ffcc 0%, #66ccff 100%);
+}

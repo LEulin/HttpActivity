@@ -1,3 +1,18 @@
-.text-primary{
-    color: red
+.text{
+    color: green;
+    font-size: 30px;
+    font-family: fantasy;
+    text-align: center
+}
+
+.card{
+    width: 25em;
+    margin-top: 20%;
+    left: 35%;
+    background: linear-gradient(to bottom, #66ffcc 0%, #66ccff 100%);
+}
+
+.btn {
+    margin-top: 2%;
+    margin-left: 43%;  
 }

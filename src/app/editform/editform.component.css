@@ -1,0 +1,7 @@
+.table{
+    margin-left: 15%;
+    width: 60em;
+    padding: 10px;
+    text-align: center;
+    background: linear-gradient(to bottom, #00ffcc 0%, #66ccff 100%);
+}

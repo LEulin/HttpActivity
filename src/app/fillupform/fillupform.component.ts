@@ -92,38 +92,26 @@ export class FillupformComponent implements OnInit {
 
     this.savebutton = true
     this.submitbutton = false
-    this.id = this.id
+    this.id = DataToEdit.id
     this.nameni = DataToEdit.name
     this.emailni = DataToEdit.email
     this.contactni = DataToEdit.phone
 
     console.log(DataToEdit)
+
+  }
+
+  test(){
     this.info.forEach(element => {
-      if (element.id == DataToEdit.id) {
-        this.httpData.updateData(DataToEdit.id).subscribe(data => {
-          element.name = DataToEdit.name
-          element.email = DataToEdit.email
-          element.phone = DataToEdit.phone
-          console.log(JSON.stringify(data))
-        })
-      }
-      console.log(element)
-    });
-    // this.storage.forEach(element => {
-    //   if (element.id == DataToEdit.id) {
-    //     this.httpData.updateData(DataToEdit.id).subscribe(data => {
-    //       console.log(JSON.stringify(data))
-    //     })
-    //     this.storage.forEach(element => {
-    //       if (element.id == DataToEdit.id) {
-    //         element.name = DataToEdit.name,
-    //           element.email = DataToEdit.email,
-    //           element.phone = DataToEdit.phone
-    //       }
-    //     })
-    //   }
-    //   console.log(this.storage)
-    // })
+        if (element.id == this.id) {
+          this.httpData.updateData(this.id).subscribe(data => {
+            element.name = this.nameni
+            element.email = this.emailni
+            element.phone = this.contactni
+            console.log(JSON.stringify(data))
+          })
+        }
+      });
   }
 
 }

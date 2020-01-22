@@ -30,8 +30,8 @@
         <br>
         <button class="btn btn-success" *ngIf="submitbutton" [disabled]="!formniSiya.form.valid">Submit</button>&nbsp;
     </form>
-    <button class="btn btn-success" [disabled]="!formniSiya.form.valid" *ngIf="savebutton" (click)="updatedData($event)">Save</button>&nbsp;
-    <button class="btn btn-danger" [disabled]="!formniSiya.form.valid" (click)="deletedData($event)">Clear</button>
+    <button class="btn btn-success" *ngIf="savebutton" (click)="test()">Save</button>&nbsp;
+    <button class="btn btn-danger" (click)="deletedData($event)">Clear</button>
 </div>
 <br>
 <br>

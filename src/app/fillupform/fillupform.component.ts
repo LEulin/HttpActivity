@@ -1,8 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { Info } from '../info';
 import { ProjectServiceService } from '../project-service.service';
 import swal from 'sweetalert2';
-import { typeWithParameters } from '@angular/compiler/src/render3/util';
 
 @Component({
   selector: 'app-fillupform',
@@ -39,12 +38,12 @@ export class FillupformComponent implements OnInit {
       email: this.emailni,
       phone: this.contactni
     }
-    swal.fire("Successfully submitted!", "Nice One", "success");
     this.httpData.addData(obj).subscribe(data => {
       var last_index = this.info[this.info.length - 1].id
       data.id = + last_index + 1
       this.info.push(data)
     })
+    swal.fire("Successfully submitted!", "Nice One", "success");
   }
 
   deletedData() {
@@ -52,23 +51,37 @@ export class FillupformComponent implements OnInit {
     this.nameni = null
     this.emailni = null
     this.contactni = null
+    swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Fields are cleared!',
+      showConfirmButton: false,
+      timer: 1500
+    })
   }
 
   updatedData(DataToEdit) {
-
     this.savebutton = true
     this.submitbutton = false
     this.id = DataToEdit.id
     this.nameni = DataToEdit.name
     this.emailni = DataToEdit.email
     this.contactni = DataToEdit.phone
-
     console.log(DataToEdit)
-
   }
 
-  test(){
-    this.info.forEach(element => {
+  update(){
+    if(this.nameni == null || this.emailni == null || this.contactni == null){
+      swal.fire({
+        position: 'center',
+        icon: 'error',
+        title: 'Fields are empty!',
+        text: 'Nothing to save!',
+        showConfirmButton: false,
+        timer: 1500
+      })
+    }else{
+      this.info.forEach(element => {
         if (element.id == this.id) {
           this.httpData.updateData(this.id).subscribe(data => {
             element.name = this.nameni
@@ -76,8 +89,11 @@ export class FillupformComponent implements OnInit {
             element.phone = this.contactni
             console.log(JSON.stringify(data))
           })
+          this.savebutton = false
+          this.submitbutton = true
         }
       });
+      swal.fire("Successfully edited!", "Nice One", "success");
+    }
   }
-
 }

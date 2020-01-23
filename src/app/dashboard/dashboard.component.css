@@ -1,7 +1,6 @@
 .card{
     width: 38em;
-    margin-top: 2%;
-    left: 27%;
+    left: 25%;
     background: linear-gradient(to bottom, #66ffcc 0%, #66ccff 100%);
 }
 .text{
@@ -11,7 +10,7 @@
     text-align: center
 }
 #btn1{
-    margin-left: 40%;
+    margin-left: 37%;
     margin-top: 2%;
     margin-bottom: 3%
 }

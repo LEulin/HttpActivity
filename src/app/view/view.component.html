@@ -1,13 +1,17 @@
-<h1>This is the data viewed!</h1>
-
-<div *ngFor="let data of userInfo">
-    <h4>ID: {{data.id}}</h4>
+<div class="card">
+    <h1 class="text">This is the data viewed!</h1>
     <br>
-    <h4>Name: {{data.name}}</h4>
-    <br>
-    <h4>Email: {{data.email}}</h4>
-    <br>
-    <h4>Contact: {{data.phone}}</h4>
-
-    &nbsp;&nbsp;<button class="btn btn-primary" [routerLink]="['/dashboard']" routerLinkActive="router-link-active">Back to dashboard</button>
+    <div *ngFor="let data of userInfo">
+        <h4>ID: {{data.id}}</h4>
+        <br>
+        <h4>Name: {{data.name}}</h4>
+        <br>
+        <h4>Email: {{data.email}}</h4>
+        <br>
+          <h4>Contact: {{data.phone}}</h4>
+          <br>
+          <br>
+     <button class="btn btn-primary" [routerLink]="['/dashboard']" routerLinkActive="router-link-active">Back to dashboard</button>
+    </div>
 </div>
+

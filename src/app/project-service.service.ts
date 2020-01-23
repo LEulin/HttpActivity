@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Info } from './info';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -22,19 +21,19 @@ export class ProjectServiceService {
     return this.httpni.get<Info[]>(this.apiUrl);
   }
 
-  addData(detail: Info):Observable<any>{
+  addData(detail: Info){
     return this.httpni.post<Info>(`${this.apiUrl}`,detail)
   }
 
-  updateData(id: any):Observable<any>{
+  updateData(id: any){
     return this.httpni.put<any>(`${this.apiUrl}/${id}`,httpOptions)
   }
 
-  deleteData(id: any): Observable<any>{
-    return this.httpni.delete<any>(`${this.apiUrl}/${id}`,httpOptions)
+  deleteData(id: any){
+    return this.httpni.delete<any>(`${this.apiUrl}/${id}`)
   }
 
-  getID(id): Observable<any>{
+  getID(id){
     return this.httpni.get(`${this.apiUrl}/${id}`)
   }
 

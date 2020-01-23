@@ -1,0 +1,17 @@
+.text{
+    color: green;
+    font-size: 30px;
+    font-family: fantasy;
+    text-align: center;
+}
+.card{
+    width: 35em;
+    margin-top: 5%;
+    left: 30%;
+    background: linear-gradient(to bottom, #66ffcc 0%, #66ccff 100%);
+    padding: 20px;
+}
+.btn{
+    margin-top: 2%;
+    margin-left: 33%;
+}
